@@ -3,6 +3,7 @@ import ProductRow from "./ProductRow"
 
 function ProductTable(props) {
   const {products} = props
+  
   return (
     <div className='centerDisp'>
       <table>
@@ -12,8 +13,15 @@ function ProductTable(props) {
             <th>Price</th>
           </tr>
         </thead>
+
         <tbody>
-          <ProductRow products={products}/>
+          {products.map((eachProduct)=>{
+            return(
+              <tr key={eachProduct.id}>
+                <ProductRow eachProduct={eachProduct} />
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>   

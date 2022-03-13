@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProductRow(props) {
 
-  const {products} = props
+  const {eachProduct} = props
 
   const redStyle = {
     color: "red",
@@ -13,19 +13,12 @@ function ProductRow(props) {
   }
 
   return (
-
-    <div>
-
-      {products.map((eachProduct)=>{
-        return (
-          <tr key={eachProduct.id} >
-            <td style={eachProduct.inStock ? blackStyle : redStyle}>{eachProduct.name}</td>
-            <td>{eachProduct.price}</td>
-         </tr>
-        )
-      })}
-
-    </div>
+   
+      <tr key={eachProduct.id} >
+        <td style={eachProduct.inStock ? blackStyle : redStyle}>{eachProduct.name}</td>
+        <td>{eachProduct.price}</td>
+      </tr>
+     
 
   )
 }
